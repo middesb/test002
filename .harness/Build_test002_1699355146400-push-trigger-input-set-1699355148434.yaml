@@ -1,5 +1,6 @@
 inputSet:
   name: Build_test002_1699355146400-push-trigger-input-set
+  tags: {}
   identifier: Build_test002_1699355146400pushtriggerinputset
   orgIdentifier: default
   projectIdentifier: default_project

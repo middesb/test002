@@ -18,12 +18,35 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    command: echo hello world
-                  timeout: ""
                   type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    shell: Bash
+                    command: |-
+                      echo "Building..."
+                      sleep 10
+                      echo "Build Complete!"
+              - step:
+                  type: Run
+                  name: Test
+                  identifier: Test
+                  spec:
+                    shell: Bash
+                    command: |-
+                      echo "Testing..."
+                      sleep 10
+                      echo "Tests Complete!"
+              - step:
+                  type: Run
+                  name: Deploy
+                  identifier: Deploy
+                  spec:
+                    shell: Bash
+                    command: |-
+                      echo "Deploying ..."
+                      sleep 10
+                      echo "Deploy Complete!"
           platform:
             arch: Amd64
             os: Linux

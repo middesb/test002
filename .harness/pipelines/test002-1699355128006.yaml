@@ -21,16 +21,27 @@ pipeline:
                       echo "Building..."
                       sleep 10
                       echo "Build Complete!"
-              - step:
-                  type: Run
-                  name: Test
-                  identifier: Test
-                  spec:
-                    shell: Bash
-                    command: |-
-                      echo "Testing..."
-                      sleep 10
-                      echo "Tests Complete!"
+              - parallel:
+                  - step:
+                      type: Run
+                      name: Test1
+                      identifier: Test
+                      spec:
+                        shell: Bash
+                        command: |-
+                          echo "Running Test1..."
+                          sleep 10
+                          echo "Test1 testing Complete!"
+                  - step:
+                      type: Run
+                      name: Test2
+                      identifier: Test2
+                      spec:
+                        shell: Bash
+                        command: |-
+                          echo "Running Test2 ..."
+                          sleep 10
+                          echo "Test2 testing complete!"
               - step:
                   type: Run
                   name: Deploy

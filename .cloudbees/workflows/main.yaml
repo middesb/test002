@@ -18,7 +18,7 @@ jobs:
         uses: cloudbees-io/ghactions-run-workflow@v2
         continue-on-error: true
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.midde_gh }}
           org-name: middesb
           repo-name: test002
           branch-name: main

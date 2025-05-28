@@ -25,3 +25,4 @@ jobs:
           workflow-name: test-and-build-image2
           test-type: JUnit
           test-result-location: junit.xml
+          
